@@ -1,0 +1,35 @@
+{
+  "name": "enhance-res",
+  "version": "1.0.0",
+  "description": "Enhance http.ServerResponse object",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/tiaanduplessis/enhance-res",
+    "type": "git"
+  },
+  "homepage": "https://github.com/tiaanduplessis/enhance-res",
+  "bugs": "https://github.com/tiaanduplessis/enhance-res",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "jest --env=node",
+    "format": "prettier-standard *.js",
+    "format:fix": "npm run format -- --fix",
+    "start": "npm run test",
+    "precommit": "npm test",
+    "pretest": "npm run format:fix"
+  },
+  "author": "tiaanduplessis <tiaanduplessis@hotmail.com>",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "node-mocks-http": "^1.6.4",
+    "prettier-standard": "^6.0.0"
+  },
+  "dependencies": {
+    "fast-safe-stringify": "^1.2.0",
+    "is-stream": "^1.1.0"
+  }
+}
