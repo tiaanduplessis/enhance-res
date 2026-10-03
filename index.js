@@ -31,15 +31,6 @@ function enhanceRes (res = {}, opts = {}) {
   }
 
   function send (val = '') {
-    if (typeof val === 'object') {
-      const str = stringify(val)
-
-      res.setHeader('Content-Type', 'application/json')
-      res.setHeader('Content-Length', Buffer.byteLength(str))
-
-      return res.end(str)
-    }
-
     if (Buffer.isBuffer(val)) {
       if (!res.getHeader('Content-Type')) {
         res.setHeader('Content-Type', 'application/octet-stream')
@@ -55,6 +46,15 @@ function enhanceRes (res = {}, opts = {}) {
       }
 
       return val.pipe(res)
+    }
+
+    if (typeof val === 'object') {
+      const str = stringify(val)
+
+      res.setHeader('Content-Type', 'application/json')
+      res.setHeader('Content-Length', Buffer.byteLength(str))
+
+      return res.end(str)
     }
 
     res.setHeader('Content-Type', 'text/plain')
