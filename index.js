@@ -22,11 +22,12 @@ function enhanceRes (res = {}, opts = {}) {
 
   function error ({ statusCode, status, message, stack }) {
     statusCode = statusCode || status
+    res.statusCode = statusCode || 500
 
     if (statusCode) {
-      send(statusCode, IN_DEV ? stack : message)
+      send(IN_DEV ? stack : message)
     } else {
-      send(500, IN_DEV ? stack : 'Internal Server Error')
+      send(IN_DEV ? stack : 'Internal Server Error')
     }
   }
 
