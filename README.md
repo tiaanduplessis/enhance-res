@@ -55,6 +55,8 @@
 
 ## Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/enhance-res.svg)](https://greenkeeper.io/)
+
 ```sh
 $ npm install enhance-res
 # OR
